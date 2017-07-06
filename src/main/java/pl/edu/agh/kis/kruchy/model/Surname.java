@@ -1,9 +1,23 @@
 package pl.edu.agh.kis.kruchy.model;
 
 import java.util.regex.Pattern;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Surname
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+
+    public Long getId()
+    {
+        return id;
+    }
+
     private String surname;
 
     @Override

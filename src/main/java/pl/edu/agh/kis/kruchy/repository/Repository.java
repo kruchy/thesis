@@ -1,16 +1,9 @@
 package pl.edu.agh.kis.kruchy.repository;
 
+import org.springframework.data.repository.CrudRepository;
+
 import pl.edu.agh.kis.kruchy.model.User;
 
-public interface Repository
+public interface Repository extends CrudRepository<User, Long>
 {
-    public User findByUsername(String name);
-
-    User findById(Integer id);
-
-    boolean saveUser(User user);
-
-    boolean deleteUser(User user);
-
-    boolean updateUser(User user);
 }

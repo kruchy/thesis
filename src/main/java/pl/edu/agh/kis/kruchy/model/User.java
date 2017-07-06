@@ -1,15 +1,32 @@
 package pl.edu.agh.kis.kruchy.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
+@Entity
 public class User
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
+    @JoinColumn(name = "surname_id")
+    @ManyToOne(targetEntity = Surname.class)
     private Surname surname;
+
+    @ManyToOne(targetEntity = Address.class)
+    @JoinColumn(name = "address_id")
     private Address address;
+
+    @OneToOne(targetEntity = PhoneNumber.class)
+    @JoinColumn(name = "phone_id")
     private PhoneNumber phoneNumber;
 
     public User(String name, Surname surname, Address address, PhoneNumber phoneNumber)
@@ -83,8 +100,6 @@ public class User
         this.phoneNumber = phoneNumber;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId()
     {
         return id;

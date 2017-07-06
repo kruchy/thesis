@@ -1,31 +1,33 @@
 package pl.edu.agh.kis.kruchy.repository;
 
-import javax.sql.DataSource;
+import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Optional;
+
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
-import org.testng.annotations.BeforeMethod;
-import org.dbunit.database.DatabaseDataSourceConnection;
-import org.dbunit.database.IDatabaseConnection;
-import org.dbunit.dataset.IDataSet;
-import org.dbunit.operation.DatabaseOperation;
-import pl.edu.agh.kis.kruchy.configuration.HibernateTestConfiguration;
+import org.testng.annotations.Test;
 
-@ContextConfiguration(classes = { HibernateTestConfiguration.class })
+import pl.edu.agh.kis.kruchy.model.User;
+
+@RunWith(SpringRunner.class)
+@DataJpaTest
+@EnableJpaRepositories
 public class HibernateRepositoryTest extends AbstractTransactionalTestNGSpringContextTests
 {
+
     @Autowired
-    DataSource dataSource;
-    @BeforeMethod
-    public void setUp() throws Exception {
-        IDatabaseConnection dbConn = new DatabaseDataSourceConnection(
-                dataSource);
-        DatabaseOperation.CLEAN_INSERT.execute(dbConn, getDataSet());
+    Repository repository;
+
+    @Test
+    public void findById()
+    {
+        Optional<User> byId = repository.findOne(1L);
+        assertThat(byId).isNotNull();
     }
 
-    protected IDataSet getDataSet() throws Exception
-    {
-        return null;
-    }
 }

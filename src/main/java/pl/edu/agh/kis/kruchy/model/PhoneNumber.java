@@ -1,13 +1,30 @@
 package pl.edu.agh.kis.kruchy.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class PhoneNumber
 {
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+
     public String getNumber()
     {
         return number;
     }
 
-    @Override public boolean equals(Object o)
+    @Override
+    public boolean equals(Object o)
     {
         if (this == o)
             return true;
@@ -19,7 +36,8 @@ public class PhoneNumber
         return number.equals(that.number);
     }
 
-    @Override public int hashCode()
+    @Override
+    public int hashCode()
     {
         return number.hashCode();
     }
@@ -28,6 +46,6 @@ public class PhoneNumber
 
     public PhoneNumber(String number)
     {
-        this.number = number.replace("-","");
+        this.number = number.replace("-", "");
     }
 }
