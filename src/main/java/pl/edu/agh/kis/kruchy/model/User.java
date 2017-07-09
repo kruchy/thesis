@@ -1,12 +1,9 @@
 package pl.edu.agh.kis.kruchy.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
+import javax.persistence.*;
 
 @Entity
 public class User
@@ -18,15 +15,19 @@ public class User
     private String name;
 
     @JoinColumn(name = "surname_id")
+    @Cascade(value = CascadeType.ALL)
     @ManyToOne(targetEntity = Surname.class)
     private Surname surname;
 
     @ManyToOne(targetEntity = Address.class)
+    @Cascade(value = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
 
     @OneToOne(targetEntity = PhoneNumber.class)
     @JoinColumn(name = "phone_id")
+    @Cascade(value = CascadeType.ALL)
+
     private PhoneNumber phoneNumber;
 
     public User(String name, Surname surname, Address address, PhoneNumber phoneNumber)
@@ -70,9 +71,9 @@ public class User
         this.name = name;
     }
 
-    public Surname getSurname()
+    public String getSurname()
     {
-        return surname;
+        return surname.getSurname();
     }
 
     public void setSurname(Surname surname)
@@ -90,9 +91,9 @@ public class User
         this.address = address;
     }
 
-    public PhoneNumber getPhoneNumber()
+    public String getPhoneNumber()
     {
-        return phoneNumber;
+        return phoneNumber.getNumber();
     }
 
     public void setPhoneNumber(PhoneNumber phoneNumber)
