@@ -143,7 +143,7 @@
     </dependencies>
     <build>
 
-    <plugins>
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -151,59 +151,56 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.yourapp.app.YourMainClass</mainClass>
+                            <mainClass>pl.edu.agh.kis.kruchy.MainApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
-    <!--<build>-->
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<groupId>org.springframework.boot</groupId>-->
-    <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
-    <!--</build>-->
 
-    <!--<repositories>-->
-    <!--<repository>-->
-    <!--<id>spring-snapshots</id>-->
-    <!--<name>Spring Snapshots</name>-->
-    <!--<url>https://repo.spring.io/snapshot</url>-->
-    <!--<snapshots>-->
-    <!--<enabled>true</enabled>-->
-    <!--</snapshots>-->
-    <!--</repository>-->
-    <!--<repository>-->
-    <!--<id>spring-milestones</id>-->
-    <!--<name>Spring Milestones</name>-->
-    <!--<url>https://repo.spring.io/milestone</url>-->
-    <!--<snapshots>-->
-    <!--<enabled>false</enabled>-->
-    <!--</snapshots>-->
-    <!--</repository>-->
-    <!--</repositories>-->
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
-    <!--<pluginRepositories>-->
-    <!--<pluginRepository>-->
-    <!--<id>spring-snapshots</id>-->
-    <!--<name>Spring Snapshots</name>-->
-    <!--<url>https://repo.spring.io/snapshot</url>-->
-    <!--<snapshots>-->
-    <!--<enabled>true</enabled>-->
-    <!--</snapshots>-->
-    <!--</pluginRepository>-->
-    <!--<pluginRepository>-->
-    <!--<id>spring-milestones</id>-->
-    <!--<name>Spring Milestones</name>-->
-    <!--<url>https://repo.spring.io/milestone</url>-->
-    <!--<snapshots>-->
-    <!--<enabled>false</enabled>-->
-    <!--</snapshots>-->
-    <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 
 </project>
