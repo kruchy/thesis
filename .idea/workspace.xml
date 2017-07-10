@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d84cd35-5d57-4367-8156-ac505185b89d" name="Default" comment="Ignore .idea folder">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hibernate/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/pom.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/MainApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/mongo/configuration/HibernateConfiguration.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/Address.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/PhoneNumber.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/Surname.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/builder/UserBuilder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/mongo/repository/Repository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/configuration/MongoConfiguration.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/repository/hibernate/HibernateRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/repository/mongo/MongoRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/kruchy/repository/mongo/MongoRepositoryTest.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/hibernate/src/main/resources/application.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/model.xml" afterPath="$PROJECT_DIR$/hibernate/src/main/resources/model.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/kruchy/model/PhoneNumberTest.java" afterPath="$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/model/PhoneNumberTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/kruchy/model/SurnameTest.java" afterPath="$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/model/SurnameTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/kruchy/model/UserTest.java" afterPath="$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/model/UserTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/kruchy/repository/HibernateRepositoryTest.java" afterPath="$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/repository/HibernateRepositoryTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/resources/User.xml" afterPath="$PROJECT_DIR$/hibernate/src/test/resources/User.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+    <list default="true" id="2d84cd35-5d57-4367-8156-ac505185b89d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hibernate/hibernate.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/hibernate/model/builder/UserBuilder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/mongo.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/MainApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/configuration/MongoConfiguration.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/Address.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/PhoneNumber.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/Surname.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/User.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/repository/DefaultMongoRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/resources/application.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/resources/model.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mongo/src/main/test/pl/edu/agh/kis/kruchy/mongo/repository/DefaultMongoRepositoryTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/MainApplication.java" afterPath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/hibernate/MainApplication.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/configuration/HibernateConfiguration.java" afterPath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/hibernate/configuration/HibernateConfiguration.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/model/Address.java" afterPath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/hibernate/model/Address.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/model/PhoneNumber.java" afterPath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/hibernate/model/PhoneNumber.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/model/Surname.java" afterPath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/hibernate/model/Surname.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/model/User.java" afterPath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/hibernate/model/User.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/model/builder/UserBuilder.java" afterPath="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/builder/UserBuilder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/kruchy/repository/Repository.java" afterPath="$PROJECT_DIR$/hibernate/src/main/java/pl/edu/agh/kis/kruchy/hibernate/repository/Repository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesis.iml" afterPath="$PROJECT_DIR$/thesis.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -50,17 +45,7 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Surname.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/model/Surname.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="73" column="20" lean-forward="false" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -78,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HibernateRepositoryTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HibernateRepositoryTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/repository/HibernateRepositoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+              <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,8 +79,10 @@
         <entry file="file://$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/model/UserTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding />
+              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,11 +90,21 @@
       <file leaf-file-name="DefaultMongoRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/repository/DefaultMongoRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultMongoRepositoryTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mongo/src/main/test/pl/edu/agh/kis/kruchy/mongo/repository/DefaultMongoRepositoryTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="40" lean-forward="false" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -166,8 +163,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="TestNG Test Class" />
         <option value="Class" />
+        <option value="TestNG Test Class" />
       </list>
     </option>
   </component>
@@ -246,6 +243,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/repository/HibernateRepositoryTest.java" />
         <option value="$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/configuration/MongoConfiguration.java" />
+        <option value="$PROJECT_DIR$/mongo/src/main/test/pl/edu/agh/kis/kruchy/mongo/repository/DefaultMongoRepositoryTest.java" />
       </list>
     </option>
   </component>
@@ -349,6 +347,78 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mongo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kruchy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -965,16 +1035,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="Errors" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
+    <property name="create.test.in.the.same.root" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.edu.agh.kis.kruchy.mongo.repository" />
       <recent name="pl.edu.agh.kis.kruchy.repository.mongo" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -1635,7 +1707,7 @@
       <workItem from="1497968854317" duration="88000" />
       <workItem from="1497968967177" duration="31000" />
       <workItem from="1499621227527" duration="10357000" />
-      <workItem from="1499710223741" duration="8317000" />
+      <workItem from="1499710223741" duration="9053000" />
     </task>
     <task id="LOCAL-00001" summary="Remove invalid .idea folder">
       <created>1499624591010</created>
@@ -1700,7 +1772,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499631631569</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Split application to modules">
+      <created>1499718696565</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1499718696565</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1736,16 +1815,15 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19746000" />
+    <option name="totallyTimeSpent" value="20482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26197916" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26197916" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1760,10 +1838,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33896515" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33896515" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26979166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26979166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1792,7 +1870,8 @@
     <MESSAGE value="Add mongo configuration" />
     <MESSAGE value="Ignore .idea folder" />
     <MESSAGE value="Add templates for future test cases for mongo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add templates for future test cases for mongo" />
+    <MESSAGE value="Split application to modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Split application to modules" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1807,13 +1886,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.0.M5/spring-context-5.0.0.M5.jar!/org/springframework/validation/beanvalidation/SpringValidatorAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="32" column="66" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.0.M5/spring-context-5.0.0.M5.jar!/org/springframework/validation/beanvalidation/LocalValidatorFactoryBean.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -2143,8 +2215,10 @@
     <entry file="file://$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/model/UserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2152,16 +2226,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/repository/DefaultMongoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2211,7 +2275,7 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+          <caret line="73" column="20" lean-forward="false" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -2219,12 +2283,107 @@
     <entry file="file://$PROJECT_DIR$/hibernate/src/test/java/pl/edu/agh/kis/kruchy/hibernate/repository/HibernateRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mongo/src/main/java/pl/edu/agh/kis/kruchy/mongo/repository/DefaultMongoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongo/src/main/test/pl/edu/agh/kis/kruchy/mongo/repository/DefaultMongoRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="40" lean-forward="false" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>angular</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>hibernate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
