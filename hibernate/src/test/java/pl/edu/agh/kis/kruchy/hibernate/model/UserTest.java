@@ -1,11 +1,9 @@
-package pl.edu.agh.kis.kruchy.model;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.times;
+package pl.edu.agh.kis.kruchy.hibernate.model;
 
 import org.mockito.Mockito;
 import org.testng.annotations.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 class UserTest

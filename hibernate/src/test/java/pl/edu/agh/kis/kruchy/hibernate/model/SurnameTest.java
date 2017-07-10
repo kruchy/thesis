@@ -1,9 +1,8 @@
-package pl.edu.agh.kis.kruchy.model;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.testng.Assert.*;
+package pl.edu.agh.kis.kruchy.hibernate.model;
 
 import org.testng.annotations.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SurnameTest
 {

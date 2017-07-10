@@ -1,26 +1,24 @@
-package pl.edu.agh.kis.kruchy.repository;
+package pl.edu.agh.kis.kruchy.hibernate.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
 import org.testng.annotations.Test;
-import pl.edu.agh.kis.kruchy.model.User;
-import pl.edu.agh.kis.kruchy.repository.hibernate.HibernateRepository;
+import pl.edu.agh.kis.kruchy.hibernate.model.User;
 
 import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static pl.edu.agh.kis.kruchy.model.builder.UserBuilder.anUser;
+import static pl.edu.agh.kis.kruchy.hibernate.model.builder.UserBuilder.anUser;
 
 @DataJpaTest
 @EnableJpaRepositories
-public class HibernateRepositoryTest extends AbstractTransactionalTestNGSpringContextTests
-{
+public class HibernateRepositoryTest extends AbstractTransactionalTestNGSpringContextTests {
 
     @Autowired
-    HibernateRepository hibernateRepository;
+    Repository hibernateRepository;
 
     @Test
     public void returnsUserByName() {
