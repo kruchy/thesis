@@ -4,11 +4,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 
 @Document(collection = "user")
 public class User implements Serializable {
     @Id
-    private Long id;
+    private BigInteger id;
 
     private String name;
 
@@ -78,11 +79,11 @@ public class User implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    public Long getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 

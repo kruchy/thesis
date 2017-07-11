@@ -1,4 +1,4 @@
-package pl.edu.agh.kis.kruchy;
+package pl.edu.agh.kis.kruchy.hibernate;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

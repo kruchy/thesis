@@ -4,15 +4,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.regex.Pattern;
 
 
 @Document
 public class Surname implements Serializable {
     @Id
-    Long id;
+    BigInteger id;
 
-    public Long getId() {
+    public BigInteger getId() {
         return id;
     }
 
