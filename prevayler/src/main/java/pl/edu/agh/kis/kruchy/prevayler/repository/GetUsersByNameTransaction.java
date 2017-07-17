@@ -3,13 +3,14 @@ package pl.edu.agh.kis.kruchy.prevayler.repository;
 import org.prevayler.Query;
 import pl.edu.agh.kis.kruchy.prevayler.model.User;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
 
-public class GetUsersByNameTransaction implements Query<Root, List<User>> {
+public class GetUsersByNameTransaction implements Query<Root, List<User>>, Serializable {
     private String name;
 
     public GetUsersByNameTransaction(String name) {

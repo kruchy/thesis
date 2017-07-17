@@ -5,6 +5,7 @@ import org.prevayler.Prevayler;
 import org.prevayler.PrevaylerFactory;
 import pl.edu.agh.kis.kruchy.prevayler.model.User;
 import pl.edu.agh.kis.kruchy.prevayler.repository.transaction.CreateUserTransaction;
+import pl.edu.agh.kis.kruchy.prevayler.repository.transaction.DeleteUserTransaction;
 import pl.edu.agh.kis.kruchy.prevayler.repository.transaction.GetUsersBySurnameTransaction;
 
 import java.util.Collections;
@@ -43,7 +44,11 @@ public class PrevaylerUserRepository implements UserRepository {
 
     @Override
     public Optional<User> findByPhoneNumber(String phoneNumber) {
-        return null;
+        try {
+            return prevayler.execute(new GetUserByPhoneNumber(phoneNumber));
+        } catch (Exception e) {
+            return Optional.empty();
+        }
     }
 
     @Override
@@ -71,6 +76,22 @@ public class PrevaylerUserRepository implements UserRepository {
             return (T) execute;
         } catch (Exception e) {
             return null;
+        }
+    }
+
+    @Override
+    public void delete(User user) {
+        try {
+            prevayler.execute(new DeleteUserTransaction(user.getId()));
+        } catch (Exception ignored) {
+        }
+    }
+
+    @Override
+    public void delete(String id) {
+        try {
+            prevayler.execute(new DeleteUserTransaction(id));
+        } catch (Exception ignored) {
         }
     }
 }
