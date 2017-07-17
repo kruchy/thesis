@@ -37,12 +37,18 @@ public class DefaultMongoRepositoryTest {
     }
 
     @Test
-    public void returnsUserBySurname() {
-        List<User> all3 = defaultMongoRepository.findAll();
-
+    public void returnsUserById() {
         User user = testUser();
-        List<User> all1 = defaultMongoRepository.findAll();
+        user.setId(String.valueOf("123"));
+        defaultMongoRepository.save(user);
+        Optional<User> found = defaultMongoRepository.findById("123");
+        assertThat(found).isPresent();
+        found.ifPresent(user1 -> assertThat(user1).isEqualTo(user));
+    }
 
+    @Test
+    public void returnsUserBySurname() {
+        User user = testUser();
         defaultMongoRepository.insert(user);
         List<User> all = defaultMongoRepository.findAllBySurname(user.getSurname());
         assertThat(all).hasSize(1);

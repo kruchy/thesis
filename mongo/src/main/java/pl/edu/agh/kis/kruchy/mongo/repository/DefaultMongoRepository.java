@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface DefaultMongoRepository extends MongoRepository<User, BigInteger>/*, DefaultMongoRepositoryCustom */ {
+public interface DefaultMongoRepository extends MongoRepository<User, BigInteger> {
     List<User> findAllByName(String name);
 
     @Query("{'surname.surname'  :?0 }")
@@ -18,5 +18,12 @@ public interface DefaultMongoRepository extends MongoRepository<User, BigInteger
 
     @Query("{'phoneNumber.number' : ?0}")
     Optional<User> findByPhoneNumber(String phoneNumber);
+
+    List<User> findAll();
+
+    Optional<User> findById(String id);
+
+    <T extends User> T save(T user);
+
 
 }

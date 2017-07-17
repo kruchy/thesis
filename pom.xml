@@ -29,6 +29,7 @@
     <modules>
         <module>mongo</module>
         <module>hibernate</module>
+        <module>prevayler</module>
     </modules>
 
 
