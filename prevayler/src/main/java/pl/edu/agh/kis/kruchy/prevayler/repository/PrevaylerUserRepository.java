@@ -4,9 +4,7 @@ package pl.edu.agh.kis.kruchy.prevayler.repository;
 import org.prevayler.Prevayler;
 import org.prevayler.PrevaylerFactory;
 import pl.edu.agh.kis.kruchy.prevayler.model.User;
-import pl.edu.agh.kis.kruchy.prevayler.repository.transaction.CreateUserTransaction;
-import pl.edu.agh.kis.kruchy.prevayler.repository.transaction.DeleteUserTransaction;
-import pl.edu.agh.kis.kruchy.prevayler.repository.transaction.GetUsersBySurnameTransaction;
+import pl.edu.agh.kis.kruchy.prevayler.repository.transaction.*;
 
 import java.util.Collections;
 import java.util.List;
