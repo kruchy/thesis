@@ -25,7 +25,11 @@ public class PrevaylerUserRepository implements UserRepository {
 
     @Override
     public List<User> findAllByName(String name) {
-        return null;
+        try {
+            return prevayler.execute(new GetUsersByNameTransaction(name));
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
     }
 
     @Override
@@ -44,12 +48,20 @@ public class PrevaylerUserRepository implements UserRepository {
 
     @Override
     public List<User> findAll() {
-        return null;
+        try {
+            return prevayler.execute(new GetAllTransaction());
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
     }
 
     @Override
     public Optional<User> findById(String id) {
-        return null;
+        try {
+            return prevayler.execute(new GetByIdTransaction(id));
+        } catch (Exception e) {
+            return Optional.empty();
+        }
     }
 
     @Override
