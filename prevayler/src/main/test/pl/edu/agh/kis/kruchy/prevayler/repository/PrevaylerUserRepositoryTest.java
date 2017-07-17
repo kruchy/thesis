@@ -130,10 +130,14 @@ public class PrevaylerUserRepositoryTest {
 
     }
 
-    private User testUser(String name, String surname, String phoneNumber) {
-        User user = anUser().withName(name).withSurname(surname).withAddress(RandomStringUtils.randomAlphabetic(15), new Random().nextInt(50) + 1).withPhoneNumber(phoneNumber);
-        user.setId(UUID.randomUUID().toString());
-        return user;
+
+    @Test
+    public void shouldDeleteAll() throws Exception {
+        IntStream.range(0, 10).boxed().map(i -> testUser()).forEach(user -> prevayler.prevalentSystem().getUsers().put(user.getId(), user));
+
+        repository.deleteAll();
+
+        assertThat(prevayler.prevalentSystem().getUsers()).hasSize(0);
     }
 
     private User testUser(String name, String surname) {

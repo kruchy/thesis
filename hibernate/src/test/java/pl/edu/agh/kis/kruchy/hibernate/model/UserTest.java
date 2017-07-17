@@ -18,9 +18,9 @@ class UserTest
         String name = "";
 
         User user1 = new User(name,surname,address,phoneNumber);
-        user1.setId(1L);
+        user1.setId("1");
         User user2 = new User(name,surname,address,phoneNumber);
-        user2.setId(2L);
+        user2.setId("2");
         assertThat(user1).isEqualTo(user2);
     }
 

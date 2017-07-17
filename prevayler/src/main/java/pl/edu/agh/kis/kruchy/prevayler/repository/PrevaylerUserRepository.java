@@ -92,4 +92,12 @@ public class PrevaylerUserRepository implements UserRepository {
         } catch (Exception ignored) {
         }
     }
+
+    @Override
+    public void deleteAll() {
+        try {
+            prevayler.execute(new DeleteAllTransaction());
+        } catch (Exception ignored) {
+        }
+    }
 }

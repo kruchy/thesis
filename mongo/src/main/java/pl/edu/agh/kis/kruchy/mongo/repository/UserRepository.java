@@ -1,8 +1,8 @@
-package pl.edu.agh.kis.kruchy.prevayler.repository;
+package pl.edu.agh.kis.kruchy.mongo.repository;
 
 
 import org.springframework.data.repository.RepositoryDefinition;
-import pl.edu.agh.kis.kruchy.prevayler.model.User;
+import pl.edu.agh.kis.kruchy.mongo.model.User;
 
 import java.util.List;
 import java.util.Optional;

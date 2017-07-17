@@ -19,6 +19,7 @@ import static pl.edu.agh.kis.kruchy.mongo.model.builder.UserBuilder.anUser;
 public class DefaultMongoRepositoryTest {
 
     @Autowired
+    private
     DefaultMongoRepository defaultMongoRepository;
 
     @Before
@@ -49,7 +50,7 @@ public class DefaultMongoRepositoryTest {
     @Test
     public void returnsUserBySurname() {
         User user = testUser();
-        defaultMongoRepository.insert(user);
+        defaultMongoRepository.save(user);
         List<User> all = defaultMongoRepository.findAllBySurname(user.getSurname());
         assertThat(all).hasSize(1);
         User result = all.get(0);
