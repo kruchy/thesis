@@ -6,7 +6,7 @@ import org.mockito.Mockito;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-class UserTest {
+public class UserTest {
 
     @Test
     public void sameUsersWithDifferentIdShouldBeEqual() {
@@ -16,9 +16,9 @@ class UserTest {
         Address address = Mockito.mock(Address.class);
         String name = "";
 
-        User user1 = new User(name, surname, address, phoneNumber);
+        User user1 = new User(name, surname, address, phoneNumber, 0);
         user1.setId("1");
-        User user2 = new User(name, surname, address, phoneNumber);
+        User user2 = new User(name, surname, address, phoneNumber, 0);
         user2.setId("2");
         assertThat(user1).isEqualTo(user2);
     }

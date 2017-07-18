@@ -66,7 +66,12 @@ public class DefaultMongoRepositoryTest {
     }
 
     private User testUser() {
-        return anUser().withName("John").withSurname("Smith").withAddress("Wadowicka", 99).withPhoneNumber("123123123");
+        return anUser()
+                .withName("John")
+                .withSurname("Smith")
+                .withAddress("Wadowicka", 99)
+                .withPhoneNumber("123123123")
+                .withAge(18);
     }
 
 

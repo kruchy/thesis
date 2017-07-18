@@ -26,4 +26,6 @@ public interface UserRepository {
     void delete(String id);
 
     void deleteAll();
+
+
 }

@@ -5,11 +5,12 @@ import pl.edu.agh.kis.kruchy.common.model.PhoneNumber;
 import pl.edu.agh.kis.kruchy.common.model.Surname;
 import pl.edu.agh.kis.kruchy.common.model.User;
 
-public final class UserBuilder implements UserWithAddress, UserWithSurname, UserWithName, UserWithPhoneNumber {
+public final class UserBuilder implements UserWithAddress, UserWithSurname, UserWithName, UserWithPhoneNumber, UserWithAge {
     private String name;
     private Surname surname;
     private Address address;
     private PhoneNumber phoneNumber;
+    private int age;
 
     private UserBuilder() {
     }
@@ -34,13 +35,18 @@ public final class UserBuilder implements UserWithAddress, UserWithSurname, User
         return this;
     }
 
-    public User withPhoneNumber(String phoneNumber) {
+    public UserWithAge withPhoneNumber(String phoneNumber) {
         this.phoneNumber = new PhoneNumber(phoneNumber);
+        return this;
+    }
+
+    public User withAge(int age) {
+        this.age = age;
         return build();
     }
 
     private User build() {
-        return new User(name, surname, address, phoneNumber);
+        return new User(name, surname, address, phoneNumber, age);
     }
 
 }

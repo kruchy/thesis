@@ -1,16 +1,13 @@
 package pl.edu.agh.kis.kruchy.common.model;
 
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
-import javax.persistence.Id;
 import java.io.Serializable;
-
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 @Document(collection = "user")
 @Entity
@@ -40,11 +37,22 @@ public class User implements Serializable {
 
     private PhoneNumber phoneNumber;
 
-    public User(String name, Surname surname, Address address, PhoneNumber phoneNumber) {
+    private Integer age;
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public User(String name, Surname surname, Address address, PhoneNumber phoneNumber, Integer age) {
         this.name = name;
         this.surname = surname;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.age = age;
     }
 
     public User() {

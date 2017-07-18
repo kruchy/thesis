@@ -11,6 +11,7 @@ import pl.edu.agh.kis.kruchy.common.model.User;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static pl.edu.agh.kis.kruchy.common.model.builder.UserBuilder.anUser;
@@ -53,7 +54,11 @@ public class HibernateRepositoryTest {
     }
 
     private User testUser() {
-        return anUser().withName("John").withSurname("Smith").withAddress("Wadowicka", 99).withPhoneNumber("123123123");
+        return anUser().withName("John")
+                .withSurname("Smith")
+                .withAddress("Wadowicka", 99)
+                .withPhoneNumber("123123123")
+                .withAge(new Random().nextInt(50) + 10);
     }
 
 

@@ -165,14 +165,24 @@ public class PrevaylerUserRepositoryTest {
     }
 
     private User testUser(String name, String surname) {
-        User user = anUser().withName(name).withSurname(surname).withAddress(RandomStringUtils.randomAlphabetic(15), new Random().nextInt(50) + 1).withPhoneNumber(RandomStringUtils.random(9));
+        User user = anUser()
+                .withName(name)
+                .withSurname(surname)
+                .withAddress(RandomStringUtils.randomAlphabetic(15), new Random().nextInt(50) + 1)
+                .withPhoneNumber(RandomStringUtils.random(9))
+                .withAge(new Random().nextInt(50) + 10);
         user.setId(UUID.randomUUID().toString());
         return user;
     }
 
 
     private User testUser() {
-        User user = anUser().withName(RandomStringUtils.random(10)).withSurname(RandomStringUtils.random(10)).withAddress(RandomStringUtils.randomAlphabetic(15), new Random().nextInt(50) + 1).withPhoneNumber(RandomStringUtils.random(9));
+        User user = anUser()
+                .withName(RandomStringUtils.random(10))
+                .withSurname(RandomStringUtils.random(10))
+                .withAddress(RandomStringUtils.randomAlphabetic(15), new Random().nextInt(50) + 1)
+                .withPhoneNumber(RandomStringUtils.random(9))
+                .withAge(new Random().nextInt(50) + 10);
         user.setId(UUID.randomUUID().toString());
         return user;
     }
