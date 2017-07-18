@@ -1,12 +1,13 @@
 package pl.edu.agh.kis.kruchy.common.model;
 
+import org.junit.Test;
 import org.mockito.Mockito;
-import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 
 class UserTest {
+
     @Test
     public void sameUsersWithDifferentIdShouldBeEqual() {
 

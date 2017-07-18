@@ -1,6 +1,7 @@
 package pl.edu.agh.kis.kruchy.common.model;
 
-import org.testng.annotations.Test;
+
+import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

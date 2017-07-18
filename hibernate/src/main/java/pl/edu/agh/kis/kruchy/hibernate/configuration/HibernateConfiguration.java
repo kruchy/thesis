@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -57,5 +58,10 @@ public class HibernateConfiguration {
         HibernateTransactionManager txManager = new HibernateTransactionManager();
         txManager.setSessionFactory(s);
         return txManager;
+    }
+
+    @Bean
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+        return new PersistenceExceptionTranslationPostProcessor();
     }
 }
