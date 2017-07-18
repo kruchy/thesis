@@ -19,7 +19,7 @@ import static pl.edu.agh.kis.kruchy.common.model.builder.UserBuilder.anUser;
 @DataJpaTest
 @EnableJpaRepositories(basePackages = "pl.edu.agh.kis.kruchy.hibernate.repository")
 @EntityScan(basePackages = "pl.edu.agh.kis.kruchy.common")
-public class HibernateHibernateRepositoryTest {
+public class HibernateRepositoryTest {
 
     @Autowired
     HibernateRepository hibernateHibernateRepository;
@@ -30,8 +30,7 @@ public class HibernateHibernateRepositoryTest {
         hibernateHibernateRepository.save(user);
         List<User> all = hibernateHibernateRepository.findAllByName("John");
         assertThat(all).hasSize(1);
-        User result = all.get(0);
-        assertThat(user).isEqualTo(result);
+        assertThat(all).contains(user);
     }
 
     @Test
@@ -40,8 +39,7 @@ public class HibernateHibernateRepositoryTest {
         hibernateHibernateRepository.save(user);
         List<User> all = hibernateHibernateRepository.findAllBySurname(user.getSurname());
         assertThat(all).hasSize(1);
-        User result = all.get(0);
-        assertThat(result).isEqualTo(user);
+        assertThat(all).contains(user);
 
     }
 
@@ -51,8 +49,7 @@ public class HibernateHibernateRepositoryTest {
         hibernateHibernateRepository.save(user);
         Optional<User> result = hibernateHibernateRepository.findByPhoneNumber(user.getPhoneNumber());
         assertThat(result).isPresent();
-        assertThat(result.get()).isEqualTo(user);
-
+        assertThat(result).hasValue(user);
     }
 
     private User testUser() {

@@ -33,8 +33,7 @@ public class DefaultMongoRepositoryTest {
         defaultMongoRepository.save(user);
         List<User> all = defaultMongoRepository.findAllByName("John");
         assertThat(all).hasSize(1);
-        User result = all.get(0);
-        assertThat(user).isEqualTo(result);
+        assertThat(all).contains(user);
     }
 
     @Test
@@ -44,7 +43,7 @@ public class DefaultMongoRepositoryTest {
         defaultMongoRepository.save(user);
         Optional<User> found = defaultMongoRepository.findById("123");
         assertThat(found).isPresent();
-        found.ifPresent(user1 -> assertThat(user1).isEqualTo(user));
+        assertThat(found).hasValue(user);
     }
 
     @Test
@@ -53,8 +52,7 @@ public class DefaultMongoRepositoryTest {
         defaultMongoRepository.save(user);
         List<User> all = defaultMongoRepository.findAllBySurname(user.getSurname());
         assertThat(all).hasSize(1);
-        User result = all.get(0);
-        assertThat(result).isEqualTo(user);
+        assertThat(all).contains(user);
 
     }
 
@@ -64,8 +62,7 @@ public class DefaultMongoRepositoryTest {
         defaultMongoRepository.save(user);
         Optional<User> result = defaultMongoRepository.findByPhoneNumber(user.getPhoneNumber());
         assertThat(result).isPresent();
-        assertThat(result.get()).isEqualTo(user);
-
+        assertThat(result).hasValue(user);
     }
 
     private User testUser() {
