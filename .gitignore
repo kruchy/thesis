@@ -10,5 +10,8 @@
 *.rar
 hs_err_pid*
 
+*.iml
 .idea/
 target/
+*PrevalenceBase/
+performance/
