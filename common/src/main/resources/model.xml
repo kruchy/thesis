@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Model Suite">
+    <test name="test">
+        <classes>
+            <class name="pl.edu.agh.kis.kruchy.mongo.model.UserTest"/>
+            <class name="pl.edu.agh.kis.kruchy.mongo.model.SurnameTest"/>
+            <class name="pl.edu.agh.kis.kruchy.mongo.model.PhoneNumberTest"/>
+        </classes>
+    </test>
+</suite>

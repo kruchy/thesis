@@ -1,10 +1,11 @@
-package pl.edu.agh.kis.kruchy.mongo.repository;
+package pl.edu.agh.kis.kruchy.hibernate.repository;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pl.edu.agh.kis.kruchy.common.model.User;
 
@@ -15,43 +16,29 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static pl.edu.agh.kis.kruchy.common.model.builder.UserBuilder.anUser;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@DataMongoTest
-public class DefaultMongoRepositoryTest {
+@DataJpaTest
+@EnableJpaRepositories(basePackages = "pl.edu.agh.kis.kruchy.hibernate.repository")
+@EntityScan(basePackages = "pl.edu.agh.kis.kruchy.common")
+public class HibernateHibernateRepositoryTest {
 
     @Autowired
-    private
-    DefaultMongoRepository defaultMongoRepository;
-
-    @Before
-    public void clearRepository() {
-        defaultMongoRepository.deleteAll();
-    }
+    HibernateRepository hibernateHibernateRepository;
 
     @Test
     public void returnsUserByName() {
         User user = testUser();
-        defaultMongoRepository.save(user);
-        List<User> all = defaultMongoRepository.findAllByName("John");
+        hibernateHibernateRepository.save(user);
+        List<User> all = hibernateHibernateRepository.findAllByName("John");
         assertThat(all).hasSize(1);
         User result = all.get(0);
         assertThat(user).isEqualTo(result);
     }
 
     @Test
-    public void returnsUserById() {
-        User user = testUser();
-        user.setId(String.valueOf("123"));
-        defaultMongoRepository.save(user);
-        Optional<User> found = defaultMongoRepository.findById("123");
-        assertThat(found).isPresent();
-        found.ifPresent(user1 -> assertThat(user1).isEqualTo(user));
-    }
-
-    @Test
     public void returnsUserBySurname() {
         User user = testUser();
-        defaultMongoRepository.save(user);
-        List<User> all = defaultMongoRepository.findAllBySurname(user.getSurname());
+        hibernateHibernateRepository.save(user);
+        List<User> all = hibernateHibernateRepository.findAllBySurname(user.getSurname());
         assertThat(all).hasSize(1);
         User result = all.get(0);
         assertThat(result).isEqualTo(user);
@@ -61,8 +48,8 @@ public class DefaultMongoRepositoryTest {
     @Test
     public void returnsUserByPhoneNumber() {
         User user = testUser();
-        defaultMongoRepository.save(user);
-        Optional<User> result = defaultMongoRepository.findByPhoneNumber(user.getPhoneNumber());
+        hibernateHibernateRepository.save(user);
+        Optional<User> result = hibernateHibernateRepository.findByPhoneNumber(user.getPhoneNumber());
         assertThat(result).isPresent();
         assertThat(result.get()).isEqualTo(user);
 

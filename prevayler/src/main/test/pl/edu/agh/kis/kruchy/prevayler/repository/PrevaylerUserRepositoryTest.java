@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.prevayler.Prevayler;
 import org.prevayler.PrevaylerFactory;
-import pl.edu.agh.kis.kruchy.prevayler.model.User;
+import pl.edu.agh.kis.kruchy.common.model.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static pl.edu.agh.kis.kruchy.prevayler.model.builder.UserBuilder.anUser;
+import static pl.edu.agh.kis.kruchy.common.model.builder.UserBuilder.anUser;
 
 public class PrevaylerUserRepositoryTest {
 

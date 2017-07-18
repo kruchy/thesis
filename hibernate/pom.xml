@@ -8,9 +8,9 @@
         <groupId>pl.edu.agh.misiak.thesis</groupId>
         <artifactId>JPA-Compare</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>pl.edu.agh.misiak.thesis</groupId>
     <artifactId>hibernate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <dependencies>
@@ -76,6 +76,11 @@
             <artifactId>spring-boot-test-autoconfigure</artifactId>
             <version>1.5.4.RELEASE</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>pl.edu.agh.misiak.thesis</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

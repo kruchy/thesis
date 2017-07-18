@@ -1,7 +1,7 @@
 package pl.edu.agh.kis.kruchy.prevayler.repository.transaction;
 
 import org.prevayler.Query;
-import pl.edu.agh.kis.kruchy.prevayler.model.User;
+import pl.edu.agh.kis.kruchy.common.model.User;
 import pl.edu.agh.kis.kruchy.prevayler.repository.Root;
 
 import java.io.Serializable;

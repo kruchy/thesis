@@ -1,6 +1,6 @@
 package pl.edu.agh.kis.kruchy.prevayler.repository;
 
-import pl.edu.agh.kis.kruchy.prevayler.model.User;
+import pl.edu.agh.kis.kruchy.common.model.User;
 
 import java.io.Serializable;
 import java.util.HashMap;

@@ -1,21 +1,29 @@
-package pl.edu.agh.kis.kruchy.mongo.repository;
+package pl.edu.agh.kis.kruchy.common.repository;
 
-import org.springframework.data.mongodb.repository.Query;
+
 import org.springframework.data.repository.RepositoryDefinition;
 import pl.edu.agh.kis.kruchy.common.model.User;
-import pl.edu.agh.kis.kruchy.common.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @RepositoryDefinition(domainClass = User.class, idClass = String.class)
-public interface DefaultMongoRepository extends UserRepository {
+public interface UserRepository {
     List<User> findAllByName(String name);
 
-    @Query("{'surname.surname'  :?0 }")
     List<User> findAllBySurname(String surname);
 
-    @Query("{'phoneNumber.number' : ?0}")
     Optional<User> findByPhoneNumber(String phoneNumber);
 
+    List<User> findAll();
+
+    Optional<User> findById(String id);
+
+    <T extends User> T save(T user);
+
+    void delete(User user);
+
+    void delete(String id);
+
+    void deleteAll();
 }
