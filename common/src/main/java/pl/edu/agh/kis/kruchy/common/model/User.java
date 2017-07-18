@@ -1,20 +1,25 @@
 package pl.edu.agh.kis.kruchy.common.model;
 
 
+import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
-//@Document(collection = "user")
+@Document(collection = "user")
 @Entity
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @org.springframework.data.annotation.Id
     private String id;
 
     private String name;
@@ -42,25 +47,7 @@ public class User implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-
-        User user = (User) o;
-
-        return name.equals(user.name) && surname.equals(user.surname) && address.equals(user.address) && (phoneNumber != null ? phoneNumber.equals(user.phoneNumber) : user.phoneNumber == null);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + surname.hashCode();
-        result = 31 * result + address.hashCode();
-        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
-        return result;
+    public User() {
     }
 
     public String getName() {
@@ -101,6 +88,27 @@ public class User implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        User user = (User) o;
+
+        return name.equals(user.name) && surname.equals(user.surname) && address.equals(user.address) && (phoneNumber != null ? phoneNumber.equals(user.phoneNumber) : user.phoneNumber == null);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + surname.hashCode();
+        result = 31 * result + address.hashCode();
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        return result;
     }
 
 

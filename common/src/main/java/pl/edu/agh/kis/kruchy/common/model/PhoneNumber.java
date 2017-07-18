@@ -1,23 +1,44 @@
 package pl.edu.agh.kis.kruchy.common.model;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.math.BigInteger;
 
 @Entity
 public class PhoneNumber implements Serializable {
 
-    public BigInteger getId() {
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    String id;
+
+    private String number;
+
+    public PhoneNumber() {
+    }
+
+    public PhoneNumber(String number) {
+        this.number = number.replace("-", "");
+    }
+
+    public String getId() {
         return id;
     }
 
-    @Id
-    BigInteger id;
-
     public String getNumber() {
         return number;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     @Override
@@ -35,11 +56,5 @@ public class PhoneNumber implements Serializable {
     @Override
     public int hashCode() {
         return number.hashCode();
-    }
-
-    private String number;
-
-    public PhoneNumber(String number) {
-        this.number = number.replace("-", "");
     }
 }

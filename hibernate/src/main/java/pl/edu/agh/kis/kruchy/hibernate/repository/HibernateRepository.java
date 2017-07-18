@@ -14,10 +14,10 @@ import java.util.Optional;
 public interface HibernateRepository extends UserRepository {
     List<User> findAllByName(String name);
 
-    @Query("SELECT u from User u where u.surname = :surname")
+    @Query("SELECT u from User u where u.surname.surname = :surname")
     List<User> findAllBySurname(@Param("surname") String surname);
 
-    @Query("SELECT u from User u where u.phoneNumber = :phoneNumber.number")
+    @Query("SELECT u from User u where u.phoneNumber.number = :phoneNumber")
     Optional<User> findByPhoneNumber(@Param("phoneNumber") String phoneNumber);
 
 }
