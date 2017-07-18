@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.prevayler.Prevayler;
 import org.prevayler.PrevaylerFactory;
+import pl.edu.agh.kis.kruchy.common.model.Address;
+import pl.edu.agh.kis.kruchy.common.model.Surname;
 import pl.edu.agh.kis.kruchy.common.model.User;
 
 import java.io.IOException;
@@ -138,6 +140,28 @@ public class PrevaylerUserRepositoryTest {
         repository.deleteAll();
 
         assertThat(prevayler.prevalentSystem().getUsers()).hasSize(0);
+    }
+
+
+    @Test
+    public void shouldUpdateUser() throws Exception {
+        User johnSmith = testUser("John", "Smith");
+        prevayler.prevalentSystem().getUsers().put(johnSmith.getId(), johnSmith);
+
+        Optional<User> found = repository.findById(johnSmith.getId());
+        assertThat(found).hasValue(johnSmith);
+        Address address = new Address("Different", 50);
+        Surname wick = new Surname("Wick");
+        johnSmith.setSurname(wick);
+        johnSmith.setAddress(address);
+
+        repository.save(johnSmith);
+        Optional<User> foundChanged = repository.findById(johnSmith.getId());
+        assertThat(foundChanged).isPresent();
+        assertThat(foundChanged).map(User::getSurname).hasValue(wick.getSurname());
+        assertThat(foundChanged).map(User::getAddress).hasValue(address);
+
+
     }
 
     private User testUser(String name, String surname) {
