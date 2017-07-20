@@ -8,9 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-//@EnableMongoRepositories("pl.edu.agh.kis.kruchy.mongo.repository.mongo")
+@EnableMongoRepositories("pl.edu.agh.kis.kruchy.mongo.repository")
 @PropertySource(value = {"classpath:application.properties"})
 @ComponentScan(basePackages = "pl.edu.agh.kis.kruchy.mongo.repository")
 public class MongoConfiguration extends AbstractMongoConfiguration {
