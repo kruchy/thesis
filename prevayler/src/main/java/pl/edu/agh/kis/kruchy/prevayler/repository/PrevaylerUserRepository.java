@@ -7,6 +7,7 @@ import pl.edu.agh.kis.kruchy.common.model.User;
 import pl.edu.agh.kis.kruchy.common.repository.UserRepository;
 import pl.edu.agh.kis.kruchy.prevayler.repository.transaction.*;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -79,26 +80,35 @@ public class PrevaylerUserRepository implements UserRepository {
     }
 
     @Override
-    public void delete(User user) {
+    public User delete(User user) {
         try {
             prevayler.execute(new DeleteUserTransaction(user.getId()));
+            return user;
         } catch (Exception ignored) {
+            return null;
         }
     }
 
     @Override
-    public void delete(String id) {
+    public String delete(String id) {
         try {
             prevayler.execute(new DeleteUserTransaction(id));
+            return id;
         } catch (Exception ignored) {
+            return null;
         }
     }
 
     @Override
-    public void deleteAll() {
+    public Object deleteAll() {
         try {
             prevayler.execute(new DeleteAllTransaction());
         } catch (Exception ignored) {
         }
+        return new Object();
+    }
+
+    public void close() throws IOException {
+        prevayler.close();
     }
 }

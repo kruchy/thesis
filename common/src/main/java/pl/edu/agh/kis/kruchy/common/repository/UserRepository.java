@@ -21,11 +21,11 @@ public interface UserRepository {
 
     <T extends User> T save(T user);
 
-    void delete(User user);
+    User delete(User user);
 
-    void delete(String id);
+    String delete(String id);
 
-    void deleteAll();
+    Object deleteAll();
 
 
 }
