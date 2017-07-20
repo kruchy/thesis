@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @Configuration
 @EnableMongoRepositories("pl.edu.agh.kis.kruchy.mongo.repository")
-@PropertySource(value = {"classpath:application.properties"})
+@PropertySource(value = "classpath:application.properties")
 @ComponentScan(basePackages = "pl.edu.agh.kis.kruchy.mongo.repository")
 public class MongoConfiguration extends AbstractMongoConfiguration {
     @Value("${spring.data.mongodb.host}")

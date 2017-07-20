@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pl.edu.agh.kis.kruchy.common.model.User;
 
@@ -16,6 +17,7 @@ import static pl.edu.agh.kis.kruchy.common.model.builder.UserBuilder.anUser;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @DataMongoTest
+@TestPropertySource(value = "classpath:application-test.properties")
 public class DefaultMongoRepositoryTest {
 
     @Autowired
