@@ -3,20 +3,27 @@ package pl.edu.agh.kis.kruchy.hibernate.configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
+@PropertySource(value = "classpath:application.properties")
+@EnableJpaRepositories(value = "pl.edu.agh.kis.kruchy.hibernate.repository")
+@EnableTransactionManagement
 public class HibernateConfiguration {
-
     private final Environment environment;
 
     @Autowired
@@ -35,6 +42,16 @@ public class HibernateConfiguration {
         return factoryBean;
     }
 
+    @Bean
+    public LocalSessionFactoryBean sessionFactory() {
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+        sessionFactory.setDataSource(dataSource());
+        sessionFactory.setPackagesToScan(
+                "pl.edu.agh.kis.kruchy");
+        sessionFactory.setHibernateProperties(hibernateProperties());
+
+        return sessionFactory;
+    }
     @Bean
     public JpaVendorAdapter getJpaVendorAdapter() {
         return new HibernateJpaVendorAdapter();
@@ -64,4 +81,8 @@ public class HibernateConfiguration {
         return properties;
     }
 
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
 }
