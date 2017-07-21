@@ -25,7 +25,7 @@
 
 package pl.edu.agh.kis.kruchy.performance;
 
-import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.text.RandomStringGenerator;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
@@ -43,6 +43,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import static pl.edu.agh.kis.kruchy.common.model.builder.UserBuilder.anUser;
 
@@ -52,15 +53,15 @@ public class PrevaylerBenchmark {
     private UserRepository prevaylerUserRepository;
 
     private User user;
+    private RandomStringGenerator randomStringGenerator = new RandomStringGenerator.Builder().withinRange('a', 'z').build();
 
     public PrevaylerBenchmark() {
-
+        ApplicationContext context = new AnnotationConfigApplicationContext(PrevaylerConfiguration.class);
+        prevaylerUserRepository = (UserRepository) context.getBean("prevaylerUserRepository");
     }
 
-    @Setup(value = Level.Iteration)
+    @Setup(value = Level.Invocation)
     public void setUp() {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PrevaylerConfiguration.class);
-        prevaylerUserRepository = (UserRepository) applicationContext.getBean("prevaylerUserRepository");
         for (int i = 0; i < 1000; i++) {
             user = randomUser();
             prevaylerUserRepository.save(user);
@@ -69,14 +70,13 @@ public class PrevaylerBenchmark {
 
     }
 
-    @TearDown(value = Level.Iteration)
+    @TearDown(value = Level.Invocation)
     public void tearDown() {
         try {
             ((PrevaylerUserRepository) prevaylerUserRepository).close();
             File PrevalenceBase = new File("./PrevalenceBase");
             org.apache.commons.io.FileUtils.deleteDirectory(PrevalenceBase);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
 
     }
@@ -156,13 +156,13 @@ public class PrevaylerBenchmark {
 
     private User randomUser() {
         Random random = new Random();
-        return anUser().withName(RandomStringUtils.random(7))
-                .withSurname(RandomStringUtils.random(7))
-                .withAddress(RandomStringUtils.random(10), random.nextInt(90))
-                .withPhoneNumber(RandomStringUtils.random(9))
+
+        return anUser().withName(randomStringGenerator.generate(7))
+                .withSurname(randomStringGenerator.generate(7))
+                .withAddress(randomStringGenerator.generate(10), random.nextInt(90))
+                .withPhoneNumber(randomStringGenerator.generate(9))
                 .withAge(random.nextInt(70) + 10);
     }
-
 
     public static void main(String[] args) throws RunnerException, IOException {
         File output = new File("./prevaylerBenchmark");
@@ -173,6 +173,8 @@ public class PrevaylerBenchmark {
         Options opt = new OptionsBuilder()
                 .include(PrevaylerBenchmark.class.getSimpleName())
                 .output(output.getName())
+                .mode(Mode.All)
+                .timeUnit(TimeUnit.MILLISECONDS)
                 .build();
         new Runner(opt).run();
     }
