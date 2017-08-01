@@ -1,4 +1,4 @@
-package pl.edu.agh.kis.kruchy.mongo.configuration;//package pl.edu.agh.kis.kruchy.mongo.configuration;
+package pl.edu.agh.kis.kruchy.mongo.configuration;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;

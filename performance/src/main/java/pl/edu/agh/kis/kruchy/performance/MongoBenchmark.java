@@ -25,14 +25,13 @@
 
 package pl.edu.agh.kis.kruchy.performance;
 
-import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.text.RandomStringGenerator;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -46,6 +45,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.Optional.ofNullable;
 import static pl.edu.agh.kis.kruchy.common.model.builder.UserBuilder.anUser;
@@ -53,25 +53,22 @@ import static pl.edu.agh.kis.kruchy.common.model.builder.UserBuilder.anUser;
 @State(value = Scope.Thread)
 public class MongoBenchmark {
 
-    @Autowired
     private UserRepository mongoRepository;
 
     private User user;
-    private ConfigurableApplicationContext context;
+    private RandomStringGenerator randomStringGenerator = new RandomStringGenerator.Builder().withinRange('a', 'z').build();
 
     public MongoBenchmark() {
+        SpringApplication springApplication = new SpringApplication(MongoConfiguration.class);
+        springApplication.setBannerMode(Banner.Mode.OFF);
+        springApplication.setLogStartupInfo(false);
+        ConfigurableApplicationContext context = springApplication.run("");
+        mongoRepository = context.getBean(DefaultMongoRepository.class);
 
     }
 
-    @Setup(value = Level.Iteration)
+    @Setup(value = Level.Invocation)
     public void setUp() {
-        if (context == null) {
-            SpringApplication springApplication = new SpringApplication(MongoConfiguration.class);
-            springApplication.setBannerMode(Banner.Mode.OFF);
-            springApplication.setLogStartupInfo(false);
-            context = springApplication.run("");
-        }
-        mongoRepository = context.getBean(DefaultMongoRepository.class);
         for (int i = 0; i < 1000; i++) {
             user = randomUser();
             User save = mongoRepository.save(user);
@@ -82,7 +79,8 @@ public class MongoBenchmark {
 
     }
 
-    @TearDown(value = Level.Iteration)
+    @TearDown(value = Level.Invocation)
+    @Warmup
     public void tearDown() {
         Object o = mongoRepository.deleteAll();
         ofNullable(o).ifPresent(object -> {
@@ -163,10 +161,11 @@ public class MongoBenchmark {
 
     private User randomUser() {
         Random random = new Random();
-        return anUser().withName(RandomStringUtils.random(7))
-                .withSurname(RandomStringUtils.random(7))
-                .withAddress(RandomStringUtils.random(10), random.nextInt(90))
-                .withPhoneNumber(RandomStringUtils.random(9))
+
+        return anUser().withName(randomStringGenerator.generate(7))
+                .withSurname(randomStringGenerator.generate(7))
+                .withAddress(randomStringGenerator.generate(10), random.nextInt(90))
+                .withPhoneNumber(randomStringGenerator.generate(9))
                 .withAge(random.nextInt(70) + 10);
     }
 
@@ -178,7 +177,9 @@ public class MongoBenchmark {
         }
 
         Options opt = new OptionsBuilder()
-                .include(PrevaylerBenchmark.class.getSimpleName())
+                .include(MongoBenchmark.class.getSimpleName())
+                .mode(Mode.All)
+                .timeUnit(TimeUnit.MILLISECONDS)
                 .output(output.getName())
                 .build();
         new Runner(opt).run();
